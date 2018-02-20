@@ -7,7 +7,8 @@
         private $lat;
         private $site = "https://jsonplaceholder.typicode.com/users";
         public $num;
-                
+        
+        //função para armazenar as informações necessárias do link em arrays
         function setFile(){
             $json_file = file_get_contents($this->site);   
             $json_str = json_decode($json_file, true);
@@ -24,15 +25,23 @@
             }
             return $this->file = $json_str;
         }
+        
+        //Função para capturar o website de acordo com o valor do contador
         function getWebsite($contador){
             return $this->website[$contador];
         }
-        function getUser($contador1){
-            return $this->user[$contador1];
+        
+        //Função para capturar o username de acordo com o valor do contador
+        function getUser($contador){
+            return $this->user[$contador];
         }
-        function getEmail($contador1){
-            return $this->email[$contador1];
+        
+        //Função para capturar o email de acordo com o valor do contador
+        function getEmail($contador){
+            return $this->email[$contador];
         }
+        
+        //Função para capturar a latitude de acordo com o valor do contador
         function getLat($contador){
             return $this->lat[$contador];
         }
